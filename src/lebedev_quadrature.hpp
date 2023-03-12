@@ -1,13 +1,17 @@
 #ifndef LEBEDEV_QUADRATURE
 #define LEBEDEV_QUADRATURE
 
+#include "octahedral_generator.hpp"
+
 #include <vector>
+#include <stdexcept>
 
 namespace lebedev {
 
 using vec = std::vector<double>;
 
-enum QuadratureOrder {
+enum QuadratureOrder 
+{
     order_6 = 6,
     order_14 = 14,
     order_26 = 26,
@@ -44,7 +48,49 @@ enum QuadratureOrder {
 
 
 
-class QuadraturePoints {
+class GeneratorPoint
+{
+public:
+    using OhPointGen = OctahedralPointGeneration;
+
+    double a = 1.0;
+    double b = 0.0;
+    double c = 0.0;
+    
+    OhPointGen generating_rule = OhPointGen::points_6;
+
+    void generate_quadrature_points(vec &x, vec &y, vec &z)
+    {
+        switch (generating_rule)
+        {
+            case OhPointGen::points_6:
+                generate_oh_symmetric_points<OhPointGen::points_6> (a, b, c, x, y, z);
+                break;
+            case OhPointGen::points_12:
+                generate_oh_symmetric_points<OhPointGen::points_12> (a, b, c, x, y, z);
+                break;
+            case OctahedralPointGeneration::points_8:
+                generate_oh_symmetric_points<OhPointGen::points_8> (a, b, c, x, y, z);
+                break;
+            case OctahedralPointGeneration::points_24:
+                generate_oh_symmetric_points<OhPointGen::points_24> (a, b, c, x, y, z);
+                break;
+            case OctahedralPointGeneration::points_24_axis:
+                generate_oh_symmetric_points<OhPointGen::points_24_axis> (a, b, c, x, y, z);
+                break;
+            case OctahedralPointGeneration::points_48:
+                generate_oh_symmetric_points<OhPointGen::points_48> (a, b, c, x, y, z);
+                break;
+            default:
+                throw std::invalid_argument("Not a valid octahedral generating rule");
+        }
+    }
+};
+
+
+
+class QuadraturePoints 
+{
 public:
     vec x;
     vec y;
