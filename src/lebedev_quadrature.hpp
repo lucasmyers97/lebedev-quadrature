@@ -5,6 +5,8 @@
 
 namespace lebedev {
 
+using vec = std::vector<double>;
+
 enum QuadratureOrder {
     order_6 = 6,
     order_14 = 14,
@@ -42,23 +44,12 @@ enum QuadratureOrder {
 
 
 
-enum OctahedralPointGeneration {
-    points_6,
-    points_12,
-    points_8,
-    points_24,
-    points_24_axis,
-    points_48
-};
-
-
-
 class QuadraturePoints {
 public:
-    std::vector<double> x;
-    std::vector<double> y;
-    std::vector<double> z;
-    std::vector<double> weights;
+    vec x;
+    vec y;
+    vec z;
+    vec weights;
 };
 
 } // namespace lebedev
