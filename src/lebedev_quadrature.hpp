@@ -50,14 +50,13 @@ enum QuadratureOrder
 
 class GeneratorPoint
 {
-public:
-    using OhPointGen = OctahedralPointGeneration;
+using OhPointGen = OctahedralPointGeneration;
 
-    double a = 1.0;
-    double b = 0.0;
-    double c = 0.0;
-    
-    OhPointGen generating_rule = OhPointGen::points_6;
+public:
+
+    GeneratorPoint (double a, double b, double c, OhPointGen generating_rule)
+        : a(a), b(b), c(c), generating_rule(generating_rule)
+    {}
 
     void generate_quadrature_points(vec &x, vec &y, vec &z)
     {
@@ -69,22 +68,29 @@ public:
             case OhPointGen::points_12:
                 generate_oh_symmetric_points<OhPointGen::points_12> (a, b, c, x, y, z);
                 break;
-            case OctahedralPointGeneration::points_8:
+            case OhPointGen::points_8:
                 generate_oh_symmetric_points<OhPointGen::points_8> (a, b, c, x, y, z);
                 break;
-            case OctahedralPointGeneration::points_24:
+            case OhPointGen::points_24:
                 generate_oh_symmetric_points<OhPointGen::points_24> (a, b, c, x, y, z);
                 break;
-            case OctahedralPointGeneration::points_24_axis:
+            case OhPointGen::points_24_axis:
                 generate_oh_symmetric_points<OhPointGen::points_24_axis> (a, b, c, x, y, z);
                 break;
-            case OctahedralPointGeneration::points_48:
+            case OhPointGen::points_48:
                 generate_oh_symmetric_points<OhPointGen::points_48> (a, b, c, x, y, z);
                 break;
             default:
                 throw std::invalid_argument("Not a valid octahedral generating rule");
         }
     }
+
+private:
+    double a = 1.0;
+    double b = 0.0;
+    double c = 0.0;
+    
+    OhPointGen generating_rule = OhPointGen::points_6;
 };
 
 
