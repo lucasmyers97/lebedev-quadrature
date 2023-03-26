@@ -1,6 +1,25 @@
 import argparse
-import re
 import pandas as pd
+
+function_declaration_template = '''template <>
+inline std::vector<GeneratorPoint>
+make_generator_points<QuadratureOrder::order_{order}>()
+{{
+    return {{'''
+
+function_declaration_end = '''    };
+}'''
+
+generator_point_code_template = [
+        '{{1.0, 0.0, 0.0, {weight}, OhPointGen::points_6}}',
+        '{{sqrt(0.5), 0.0, 0.0, {weight}, OhPointGen::points_12}}',
+        '{{1.0/3.0, 0.0, 0.0, {weight}, OhPointGen::points_8}}',
+        '{{{a}, sqrt(1.0 - 2.0 * {a} * {a}), 0.0, {weight}, OhPointGen::points_24}}',
+        '{{{a}, sqrt(1.0 - {a} * {a}), 0.0, {weight}, OhPointGen::points_24_axis}}',
+        '{{{a}, {b}, sqrt(1.0 - {a} * {a} - {b} * {b}), {weight}, OhPointGen::points_48}}'
+        ]
+
+indent_padding = ' ' * 8
 
 def get_commandline_args():
 
@@ -20,7 +39,40 @@ def get_commandline_args():
 def main():
 
     table_filename = get_commandline_args()
-    print(table_filename)
+    lebedev_table = pd.read_csv(table_filename, dtype={'rule': 'Int32',
+                                                       'order': 'Int32'})
+
+    available_orders = list( set(lebedev_table['order']) )
+    available_orders.sort()
+    generator_points_functions = []
+    for order in available_orders:
+
+        order_table = lebedev_table[ lebedev_table['order'] == order ].reset_index()
+        generator_points_function = function_declaration_template.format(order=order)
+        generator_points_function += '\n'
+
+        n_rows = order_table.shape[0]
+        for i, table_row in order_table.iterrows():
+            rule = table_row['rule']
+            weight = table_row['weight']
+            a = table_row['a']
+            b = table_row['b']
+
+            conditional_comma = ',' if i != (n_rows - 1) else ''
+            generator_point_string = generator_point_code_template[rule - 1]
+            generator_points_function += (indent_padding
+                                          + generator_point_string
+                                            .format(weight=weight, a=a, b=b)
+                                          + conditional_comma
+                                          + '\n')
+
+        generator_points_function += function_declaration_end + '\n'
+
+        generator_points_functions.append(generator_points_function)
+            
+    for function in generator_points_functions:
+        print(function)
+        print('\n')
 
 
 
