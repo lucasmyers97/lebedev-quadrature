@@ -15,7 +15,7 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # library source code
-# add_subdirectory(src)
+add_subdirectory(src)
 
 # tests
 add_subdirectory(test)

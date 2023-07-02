@@ -133,17 +133,17 @@ generate_quadrature_points(const std::vector<GeneratorPoint> &generator_points)
 
 
 
-template <QuadratureOrder>
+template <QuadratureOrder quad_order>
 std::vector<GeneratorPoint> make_generator_points();
 
 
 
-template <QuadratureOrder>
+template <QuadratureOrder quad_order>
 inline QuadraturePoints
 generate_quadrature_points()
 {
-    auto generator_points = make_generator_points<QuadratureOrder>();
-    return generate_quadrature_points(generator_points);
+    auto generator_points = make_generator_points<quad_order>();
+    return generate_quadrature_points<quad_order>(generator_points);
 }
 
 
