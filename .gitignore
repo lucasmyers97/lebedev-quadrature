@@ -1,2 +1,6 @@
-install/**
-build/**
+# folders
+install
+build
+
+README.pdf
+compile_commands.json
