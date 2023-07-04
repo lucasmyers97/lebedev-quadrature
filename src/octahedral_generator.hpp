@@ -48,7 +48,7 @@ generate_oh_symmetric_points<OctahedralPointGeneration::points_12>
 (double a, double b, double c, vec &x, vec &y, vec &z)
 {
 
-    assert((b = 0) && (c == 0)
+    assert((b == 0) && (c == 0)
            && "12 point symmetry has two components which are the same");
 
     x.insert(x.end(), { 0,  0,  0,  0,  a, -a,  a, -a,  a, -a,  a, -a});
