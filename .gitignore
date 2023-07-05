@@ -2,6 +2,7 @@
 install
 build
 .cache
+docs/html
 
 README.pdf
 compile_commands.json
