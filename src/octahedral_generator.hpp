@@ -8,7 +8,7 @@ namespace lebedev {
 
 using vec = std::vector<double>;
 
-enum OctahedralPointGeneration 
+enum class OctahedralPointGeneration 
 {
     points_6,
     points_12,
