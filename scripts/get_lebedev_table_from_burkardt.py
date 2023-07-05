@@ -21,6 +21,8 @@ def get_commandline_args():
 def match_lebedev_functions(file_text):
 
     # finding everything between `n = 0` and `n = n - 1` lines
+    # first match is lebedev order as it appears in function title
+    # second match is everything between n = 0 and the return statement
     pattern = ('void ld(\d+)'
                ' \( double \*x, double \*y, double \*z, double \*w \)'
                '(?:.|\n)*?(?:n = 0;\n)((?:.|\n)*?)(?:return)')
@@ -33,10 +35,10 @@ def match_lebedev_functions(file_text):
 
 def parse_lebedev_line(function_line):
 
-    gen_oh_pattern = r'gen_oh \( (\d+), .*?\);'
-    weight_pattern = r'v = ((?:\d|\.|e|-)+?);'
-    a_pattern = r'a = ((?:\d|\.|e|-)+?);'
-    b_pattern = r'b = ((?:\d|\.|e|-)+?);'
+    gen_oh_pattern = r'gen_oh \( (\d+), .*?\)\s*;'
+    weight_pattern = r'v = ((?:\d|\.|e|-)+?)\s*;'
+    a_pattern = r'a = ((?:\d|\.|e|-)+?)\s*;'
+    b_pattern = r'b = ((?:\d|\.|e|-)+?)\s*;'
 
     gen_oh_match = re.findall(gen_oh_pattern, function_line)
     weight_match = re.findall(weight_pattern, function_line)
