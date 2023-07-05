@@ -122,7 +122,7 @@ generate_oh_symmetric_points<OctahedralPointGeneration::points_48>
 
     x.insert(x.end(), { a, -a,  a, -a,  b, -b,  b, -b,  b, -b,  b, -b});
     y.insert(y.end(), { c,  c, -c, -c,  a,  a, -a, -a,  a,  a, -a, -a});
-    z.insert(z.end(), {-b,  b, -b, -b,  c,  c,  c,  c, -c, -c, -c, -c});
+    z.insert(z.end(), {-b, -b, -b, -b,  c,  c,  c,  c, -c, -c, -c, -c});
 
     x.insert(x.end(), { b, -b,  b, -b,  b, -b,  b, -b,  c, -c,  c, -c});
     y.insert(y.end(), { c,  c, -c, -c,  c,  c, -c, -c,  a,  a, -a, -a});
