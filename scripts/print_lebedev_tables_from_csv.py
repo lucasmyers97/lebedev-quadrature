@@ -12,11 +12,11 @@ function_declaration_end = '''    };
 
 generator_point_code_template = [
         '{{1.0, 0.0, 0.0, {weight}, OhPointGen::points_6}}',
-        '{{sqrt(0.5), 0.0, 0.0, {weight}, OhPointGen::points_12}}',
-        '{{1.0/3.0, 0.0, 0.0, {weight}, OhPointGen::points_8}}',
-        '{{{a}, sqrt(1.0 - 2.0 * {a} * {a}), 0.0, {weight}, OhPointGen::points_24}}',
-        '{{{a}, sqrt(1.0 - {a} * {a}), 0.0, {weight}, OhPointGen::points_24_axis}}',
-        '{{{a}, {b}, sqrt(1.0 - {a} * {a} - {b} * {b}), {weight}, OhPointGen::points_48}}'
+        '{{std::sqrt(0.5), 0.0, 0.0, {weight}, OhPointGen::points_12}}',
+        '{{std::sqrt(1.0/3.0), 0.0, 0.0, {weight}, OhPointGen::points_8}}',
+        '{{{a}, std::sqrt(1.0 - 2.0 * {a} * {a}), 0.0, {weight}, OhPointGen::points_24}}',
+        '{{{a}, std::sqrt(1.0 - {a} * {a}), 0.0, {weight}, OhPointGen::points_24_axis}}',
+        '{{{a}, {b}, std::sqrt(1.0 - {a} * {a} - {b} * {b}), {weight}, OhPointGen::points_48}}'
         ]
 
 indent_padding = ' ' * 8
