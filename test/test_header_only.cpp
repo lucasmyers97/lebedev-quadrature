@@ -63,14 +63,14 @@ int main()
 
     for (std::size_t n = 0; n <= n_max; ++n)
     {
-        if (!lebedev::order_available[n])
+        if (!lebedev::get_rule_availability(n))
             continue;
 
-        auto order = lebedev::order_enum_table[n];
-        std::cout << "Order is: " << lebedev::order_table[n] << "\n";
+        auto order = lebedev::get_rule_order(n);
+        std::cout << "Order is: " << static_cast<unsigned int>(order) << "\n";
         auto quad_points = lebedev::generate_quadrature_points(order);
 
-        auto degree = lebedev::precision_table[n];
+        auto degree = lebedev::get_rule_precision(n);
         mat x, y, z;
         std::tie(x, y, z) = calc_coord_multiples(quad_points, degree);
 

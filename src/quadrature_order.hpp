@@ -5,7 +5,15 @@
 
 namespace lebedev {
 
-enum class QuadratureOrder 
+enum class QuadratureOrder : unsigned int;
+
+QuadratureOrder get_rule_order(unsigned int rule_number);
+
+bool get_rule_availability(unsigned int rule_number);
+
+unsigned int get_rule_precision(unsigned int rule_number);
+
+enum class QuadratureOrder :unsigned int
 {
     order_6 = 6,
     order_14 = 14,
@@ -72,111 +80,6 @@ enum class QuadratureOrder
     order_5438 = 5438,
     order_5606 = 5606,
     order_5810 = 5810 
-};
-
-
-
-constexpr unsigned int n_orders = 65;
-constexpr std::array<bool, n_orders> order_available
-    = {true,    true,    true,    true,    true,    true,    true,    true,    true,    true,
-       true,    true,    true,    true,    true,    false,   true,    false,   false,   true, 
-       false,   false,   true,    false,   false,   true,    false,   false,   true,    false,
-       false,   true,    false,   false,   true,    false,   false,   true,    false,   false,
-       true,    false,   false,   true,    false,   false,   true,    false,   false,   true,
-       false,   false,   true,    false,   false,   true,    false,   false,   true,    false,
-       false,   true,    false,   false,   true };
-
-
-
-constexpr std::array<unsigned int, n_orders> precision_table
-    = {   3,   5,   7,   9,  11,  13,  15,  17,  19,  21,
-         23,  25,  27,  29,  31,  33,  35,  37,  39,  41,
-         43,  45,  47,  49,  51,  53,  55,  57,  59,  61,
-         63,  65,  67,  69,  71,  73,  75,  77,  79,  81,
-         83,  85,  87,  89,  91,  93,  95,  97,  99, 101,
-        103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 
-        123, 125, 127, 129, 131 };
-
-
-
-constexpr std::array<unsigned int, n_orders> order_table
-    = {    6,   14,   26,   38,   50,   74,   86,  110,  146,  170,
-         194,  230,  266,  302,  350,  386,  434,  482,  530,  590, 
-         650,  698,  770,  830,  890,  974, 1046, 1118, 1202, 1274,
-        1358, 1454, 1538, 1622, 1730, 1814, 1910, 2030, 2126, 2222,
-        2354, 2450, 2558, 2702, 2810, 2930, 3074, 3182, 3314, 3470,
-        3590, 3722, 3890, 4010, 4154, 4334, 4466, 4610, 4802, 4934,
-        5090, 5294, 5438, 5606, 5810 };
-
-
-
-constexpr std::array<QuadratureOrder, n_orders> order_enum_table
-    = {
-    QuadratureOrder::order_6,
-    QuadratureOrder::order_14,
-    QuadratureOrder::order_26,
-    QuadratureOrder::order_38,
-    QuadratureOrder::order_50,
-    QuadratureOrder::order_74,
-    QuadratureOrder::order_86,
-    QuadratureOrder::order_110,
-    QuadratureOrder::order_146,
-    QuadratureOrder::order_170,
-    QuadratureOrder::order_194,
-    QuadratureOrder::order_230,
-    QuadratureOrder::order_266,
-    QuadratureOrder::order_302,
-    QuadratureOrder::order_350,
-    QuadratureOrder::order_386,
-    QuadratureOrder::order_434,
-    QuadratureOrder::order_482,
-    QuadratureOrder::order_530,
-    QuadratureOrder::order_590,
-    QuadratureOrder::order_650,
-    QuadratureOrder::order_698,
-    QuadratureOrder::order_770,
-    QuadratureOrder::order_830,
-    QuadratureOrder::order_890,
-    QuadratureOrder::order_974,
-    QuadratureOrder::order_1046,
-    QuadratureOrder::order_1118,
-    QuadratureOrder::order_1202,
-    QuadratureOrder::order_1274,
-    QuadratureOrder::order_1358,
-    QuadratureOrder::order_1454,
-    QuadratureOrder::order_1538,
-    QuadratureOrder::order_1622,
-    QuadratureOrder::order_1730,
-    QuadratureOrder::order_1814,
-    QuadratureOrder::order_1910,
-    QuadratureOrder::order_2030,
-    QuadratureOrder::order_2126,
-    QuadratureOrder::order_2222,
-    QuadratureOrder::order_2354,
-    QuadratureOrder::order_2450,
-    QuadratureOrder::order_2558,
-    QuadratureOrder::order_2702,
-    QuadratureOrder::order_2810,
-    QuadratureOrder::order_2930,
-    QuadratureOrder::order_3074,
-    QuadratureOrder::order_3182,
-    QuadratureOrder::order_3314,
-    QuadratureOrder::order_3470,
-    QuadratureOrder::order_3590,
-    QuadratureOrder::order_3722,
-    QuadratureOrder::order_3890,
-    QuadratureOrder::order_4010,
-    QuadratureOrder::order_4154,
-    QuadratureOrder::order_4334,
-    QuadratureOrder::order_4466,
-    QuadratureOrder::order_4610,
-    QuadratureOrder::order_4802,
-    QuadratureOrder::order_4934,
-    QuadratureOrder::order_5090,
-    QuadratureOrder::order_5294,
-    QuadratureOrder::order_5438,
-    QuadratureOrder::order_5606,
-    QuadratureOrder::order_5810 
 };
 
 } // namespace lebedev

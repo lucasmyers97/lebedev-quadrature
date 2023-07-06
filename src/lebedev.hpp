@@ -6,10 +6,13 @@
 #endif
 
 #include "lebedev_quadrature.hpp"
+#include "quadrature_order.hpp"
+#include "octahedral_generator.hpp"
 
 #if LEBEDEV_HEADER_ONLY || LEBEDEV_IMPLEMENTATION
 
 #include "lebedev_quadrature.inl"
+#include "quadrature_order.inl"
 
 #endif
 
