@@ -58,7 +58,7 @@ calc_coord_multiples(const lebedev::QuadraturePoints quad_points, unsigned int d
 
 int main()
 {
-    constexpr unsigned int n_max = 65;
+    constexpr unsigned int n_max = 64;
 
     for (std::size_t n = 0; n <= n_max; ++n)
     {
