@@ -33,7 +33,6 @@ undocumented    = true
 
 [sources]
 # paths           = [ 'pages' ]
-extract_all = true
 recursive_paths = [ '../src' ]
 patterns        = [ '*.hpp', '*.dox' ]
 strip_paths     = [ '../src' ]
