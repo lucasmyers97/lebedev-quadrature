@@ -1,4 +1,4 @@
-#include "octahedral_generator.hpp"
+#include "generator_point.hpp"
 
 namespace lebedev {
 

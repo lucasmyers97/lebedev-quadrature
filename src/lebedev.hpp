@@ -7,13 +7,13 @@
 
 #include "lebedev_quadrature.hpp"
 #include "quadrature_order.hpp"
-#include "octahedral_generator.hpp"
+#include "generator_point.hpp"
 
 #if LEBEDEV_HEADER_ONLY || LEBEDEV_IMPLEMENTATION
 
 #include "lebedev_quadrature.inl"
 #include "quadrature_order.inl"
-#include "octahedral_generator.inl"
+#include "generator_point.inl"
 
 #endif
 

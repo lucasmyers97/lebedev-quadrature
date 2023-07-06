@@ -1,5 +1,5 @@
-#ifndef OCTAHEDRAL_GENERATOR
-#define OCTAHEDRAL_GENERATOR
+#ifndef GENERATOR_POINT_HPP
+#define GENERATOR_POINT_HPP
 
 #include <vector>
 #include <cassert>

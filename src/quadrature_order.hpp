@@ -1,5 +1,5 @@
-#ifndef QUADRATURE_ORDER
-#define QUADRATURE_ORDER
+#ifndef QUADRATURE_ORDER_HPP
+#define QUADRATURE_ORDER_HPP
 
 #include <array>
 

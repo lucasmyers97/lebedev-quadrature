@@ -1,6 +1,6 @@
 #include "lebedev_quadrature.hpp"
 #include "quadrature_order.hpp"
-#include "octahedral_generator.hpp"
+#include "generator_point.hpp"
 
 namespace lebedev {
 
