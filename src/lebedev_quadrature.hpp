@@ -1,6 +1,5 @@
-#ifndef LEBEDEV_QUADRATURE
-#define LEBEDEV_QUADRATURE
-
+#ifndef LEBEDEV_QUADRATURE_HPP
+#define LEBEDEV_QUADRATURE_HPP
 #include "octahedral_generator.hpp"
 #include "quadrature_order.hpp"
 
