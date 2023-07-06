@@ -1,6 +1,6 @@
 #ifndef LEBEDEV_QUADRATURE_HPP
 #define LEBEDEV_QUADRATURE_HPP
-#include "octahedral_generator.hpp"
+
 #include "quadrature_order.hpp"
 
 #include <vector>
@@ -19,8 +19,6 @@ struct QuadraturePoints
     vec z;
     vec weights;
 };
-
-
 
 inline QuadraturePoints generate_quadrature_points(QuadratureOrder quad_order);
 

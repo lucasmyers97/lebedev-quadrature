@@ -13,6 +13,7 @@
 
 #include "lebedev_quadrature.inl"
 #include "quadrature_order.inl"
+#include "octahedral_generator.inl"
 
 #endif
 

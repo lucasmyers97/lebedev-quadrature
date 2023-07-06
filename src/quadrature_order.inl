@@ -1,4 +1,5 @@
 #include "quadrature_order.hpp"
+
 #include <stdexcept>
 
 namespace lebedev
