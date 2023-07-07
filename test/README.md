@@ -11,7 +11,7 @@ To see why the test programs are written the way that they are, we consider the 
 Details of the calculation are [here](https://www.jstor.org/stable/2695802) (or look it up on Sci-Hub if you don't have access).
 
 In general, the solution for the integral of a monomial over the sphere is given by:
-\begin{equation}
+```math
 \int_{S^2} x^{a} y^{b} z^{c} \, dS
 =
 \begin{cases}
@@ -20,27 +20,27 @@ In general, the solution for the integral of a monomial over the sphere is given
     0
     &\text{otherwise}
 \end{cases}
-\end{equation}
+```
 where
-\begin{equation*}
+```
 B(l, m, n)
 =
 \frac{\Gamma(l) \Gamma(m) \Gamma(n)}{\Gamma(l + m + n)}
-\end{equation*}
+```
 We may write this in a more easily calculable way [by noting that](https://www.wikiwand.com/en/Particular_values_of_the_gamma_function#Integers_and_half-integers):
-\begin{equation*}
+```
 \Gamma\left(\frac{n}{2}\right)
 =
 \sqrt{\pi} \frac{(n - 2)!!}{2^{\frac{n - 1}{2}}}
-\end{equation*}
+```
 with
-\begin{equation*}
+```
 n!!
 =
 \prod_{k = 0}^{\lceil \frac{n}{2} \rceil - 1} (n - 2k)
-\end{equation*}
+```
 To write out $B(l, m, n)$ in a simpler way, we write:
-\begin{equation*}
+```
 \begin{split}
     \Gamma\left( \frac{a + 1}{2} \right)
     &=
@@ -49,11 +49,11 @@ To write out $B(l, m, n)$ in a simpler way, we write:
     \frac{\sqrt{\pi}}{2^{\frac{a}{2}}} 
     \prod_{k = 1}^{\frac{a}{2}} (2k - 1)
 \end{split}
-\end{equation*}
+```
 where the last line follows because $a$ is even for nonzero integral, so $a - 1$ is odd.
 This applies for $b$ and $c$ as well. 
 Finally:
-\begin{equation*}
+```
 \begin{split}
     \Gamma\left( \frac{a + b + c + 3}{2} \right)
     &=
@@ -62,25 +62,25 @@ Finally:
     \frac{\sqrt{\pi}}{2^{\frac{a + b + c + 2}{2}}} 
     \prod_{k = 1}^{\frac{a + b + c + 2}{2}} (2k - 1)
 \end{split}
-\end{equation*}
+```
 With this we may calculate that:
-\begin{equation}
+```math
     2 B \left(\tfrac{a + 1}{2}, \tfrac{b + 1}{2}, \tfrac{c + 1}{2} \right)
     =
     4 \pi \frac{P(a)P(b)P(c)}{P(a + b + c + 1)}
-\end{equation}
+```
 where we have defined
-\begin{equation}
+```math
     P(a)
     =
     \prod_{k = 1}^{\frac{a}{2}} (2k - 1)
-\end{equation}
+```
 Hence, since the Lebedev quadrature scheme should be exact for this integrand we get:
-\begin{equation}
+```math
     \frac{P(a)P(b)P(c)}{P(a + b + c + 1)}
     =
     \sum_k x_k^a \, y_k^b \, z_k^c \: w_k
-\end{equation}
+```
 This is what we calculate in the tests.
 
 ## Explanation of tests
