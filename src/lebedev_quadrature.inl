@@ -2,19 +2,71 @@
 #include "quadrature_order.hpp"
 #include "generator_point.hpp"
 
+#include <cmath>
+#include <tuple>
+
 namespace lebedev {
 
-inline QuadraturePoints
-generate_quadrature_points(const std::vector<GeneratorPoint> &generator_points)
-{
-    QuadraturePoints quad_points;
-    for (const auto& generator_point : generator_points)
-        generator_point.generate_quadrature_points(quad_points.x, 
-                                                   quad_points.y, 
-                                                   quad_points.z,
-                                                   quad_points.weights);
 
-    return quad_points;
+using vec = std::vector<double>;
+
+inline std::tuple<vec, vec, vec, vec> 
+generate_quadrature_points(QuadratureOrder quad_order);
+
+
+
+inline QuadraturePoints::QuadraturePoints(QuadratureOrder quad_order)
+{
+    auto lebedev_coords = generate_quadrature_points(quad_order);
+
+    x = std::get<0>(lebedev_coords);
+    y = std::get<1>(lebedev_coords);
+    z = std::get<2>(lebedev_coords);
+    weights = std::get<3>(lebedev_coords);
+}
+
+
+
+inline const vec&
+QuadraturePoints::get_x() const
+{
+    return x;
+}
+
+
+
+inline const vec&
+QuadraturePoints::get_y() const
+{
+    return y;
+}
+
+
+
+inline const vec&
+QuadraturePoints::get_z() const
+{
+    return z;
+}
+
+
+
+inline const vec&
+QuadraturePoints::get_weights() const
+{
+    return weights;
+}
+
+
+
+inline double 
+QuadraturePoints::evaluate_spherical_integral(scalar_function integrand_at_point)
+{
+    double sum = 0;
+    for (std::size_t i = 0; i < x.size(); ++i)
+        sum += integrand_at_point(x[i], y[i], z[i]) * weights[i];
+
+    return sum;
 }
 
 
@@ -1631,7 +1683,20 @@ make_generator_points<QuadratureOrder::order_5810>()
 
 
 
-inline QuadraturePoints generate_quadrature_points(QuadratureOrder quad_order)
+inline std::tuple<vec, vec, vec, vec>
+generate_quadrature_points(const std::vector<GeneratorPoint> &generator_points)
+{
+    vec x, y, z, weights;
+    for (const auto& generator_point : generator_points)
+        generator_point.generate_quadrature_points(x, y, z, weights);
+
+    return std::make_tuple(x, y, z, weights);
+}
+
+
+
+inline std::tuple<vec, vec, vec, vec> 
+generate_quadrature_points(QuadratureOrder quad_order)
 {
     std::vector<GeneratorPoint> generator_points;
     if (quad_order == QuadratureOrder::order_6   )

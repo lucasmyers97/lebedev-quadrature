@@ -31,7 +31,11 @@ std::vector<double> calc_2k_1_product(unsigned int n)
 std::tuple<mat, mat, mat>
 calc_coord_multiples(const lebedev::QuadraturePoints quad_points, unsigned int degree)
 {
-    const auto n_pts = quad_points.weights.size();
+    const auto n_pts = quad_points.get_weights().size();
+
+    auto qx = quad_points.get_x();
+    auto qy = quad_points.get_y();
+    auto qz = quad_points.get_z();
 
     mat x(degree + 1, vec(n_pts));
     mat y(degree + 1, vec(n_pts));
@@ -47,9 +51,9 @@ calc_coord_multiples(const lebedev::QuadraturePoints quad_points, unsigned int d
     for (std::size_t i = 1; i <= degree; ++i)
         for (std::size_t j = 0; j < n_pts; ++j)
         {
-            x[i][j] = x[i - 1][j] * quad_points.x[j] * quad_points.x[j];
-            y[i][j] = y[i - 1][j] * quad_points.y[j] * quad_points.y[j];
-            z[i][j] = z[i - 1][j] * quad_points.z[j] * quad_points.z[j];
+            x[i][j] = x[i - 1][j] * qx[j] * qx[j];
+            y[i][j] = y[i - 1][j] * qy[j] * qy[j];
+            z[i][j] = z[i - 1][j] * qz[j] * qz[j];
         }
 
     return std::make_tuple(x, y, z);
@@ -68,7 +72,7 @@ int main()
 
         auto order = lebedev::get_rule_order(n);
         std::cout << "Order is: " << static_cast<unsigned int>(order) << "\n";
-        auto quad_points = lebedev::generate_quadrature_points(order);
+        auto quad_points = lebedev::QuadraturePoints(order);
 
         auto degree = lebedev::get_rule_precision(n);
         mat x, y, z;
@@ -85,8 +89,9 @@ int main()
                 const double integral = P[i] * P[j] * P[k] / P[i + j + k + 1];
 
                 double quad = 0;
-                for (std::size_t l = 0; l < quad_points.weights.size(); ++l)
-                    quad += x[i][l] * y[j][l] * z[k][l] * quad_points.weights[l];
+                auto w = quad_points.get_weights();
+                for (std::size_t l = 0; l < w.size(); ++l)
+                    quad += x[i][l] * y[j][l] * z[k][l] * w[l];
 
                 error += std::abs(quad - integral);
             }
