@@ -1,40 +1,20 @@
 #ifndef LEBEDEV_QUADRATURE_HPP
 #define LEBEDEV_QUADRATURE_HPP
 
+#ifndef LEBEDEV_HEADER_ONLY
+#define LEBEDEV_HEADER_ONLY 1
+#endif
+
+#include "quadrature_points.hpp"
 #include "quadrature_order.hpp"
+#include "generator_point.hpp"
 
-#include <vector>
-#include <functional>
+#if LEBEDEV_HEADER_ONLY || LEBEDEV_IMPLEMENTATION
 
-namespace lebedev {
+#include "quadrature_points.inl"
+#include "quadrature_order.inl"
+#include "generator_point.inl"
 
-using vec = std::vector<double>;
-
-class QuadraturePoints 
-{
-using vec = std::vector<double>;
-using scalar_function = std::function<double(double, double, double)>;
-using vector_function = std::function<vec(vec, vec, vec, vec)>;
-
-public:
-    inline QuadraturePoints(QuadratureOrder quad_order);
-
-    double evaluate_spherical_integral(scalar_function integrand_at_point);
-    double evaluate_spherical_integral(vector_function integrand_at_points);
-
-    const vec& get_x() const;
-    const vec& get_y() const;
-    const vec& get_z() const;
-    const vec& get_weights() const;
-
-private:
-
-    vec x;
-    vec y;
-    vec z;
-    vec weights;
-};
-
-} // namespace lebedev
+#endif
 
 #endif

@@ -1,4 +1,4 @@
-#include "lebedev_quadrature.hpp"
+#include "quadrature_points.hpp"
 #include "quadrature_order.hpp"
 #include "generator_point.hpp"
 

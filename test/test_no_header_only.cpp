@@ -2,7 +2,7 @@
 #include <vector>
 #include <tuple>
 
-#include "lebedev.hpp"
+#include "lebedev_quadrature.hpp"
 
 using vec = std::vector<double>;
 using mat = std::vector<vec>;
