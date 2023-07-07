@@ -23,6 +23,13 @@ add_executable(test_no_header_only
 target_link_libraries(test_no_header_only
     lebedev_implementation)
 
+# Testing evaluating spherical integral of scalar function
+add_executable(scalar_function_test
+    scalar_function_test.cpp)
+target_link_libraries(scalar_function_test
+    lebedev_quadrature)
+
 install(TARGETS test_header_only DESTINATION bin)
 install(TARGETS lebedev_implementation DESTINATION lib)
 install(TARGETS test_no_header_only DESTINATION bin)
+install(TARGETS scalar_function_test DESTINATION bin)

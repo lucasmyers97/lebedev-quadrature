@@ -64,13 +64,27 @@ QuadraturePoints::get_weights() const
 
 
 LEBEDEV_EXTERNAL_LINKAGE double 
-QuadraturePoints::evaluate_spherical_integral(scalar_function integrand_at_point)
+QuadraturePoints::evaluate_spherical_integral(const scalar_function& integrand_at_point) const
 {
     double sum = 0;
     for (std::size_t i = 0; i < x.size(); ++i)
         sum += integrand_at_point(x[i], y[i], z[i]) * weights[i];
 
-    return sum;
+    return 4 * M_PI * sum;
+}
+
+
+
+LEBEDEV_EXTERNAL_LINKAGE double 
+QuadraturePoints::evaluate_spherical_integral(const vector_function& integrand_at_points) const
+{
+    auto integrand_vals = integrand_at_points(x, y, z);
+
+    double sum = 0;
+    for (std::size_t i = 0; i < integrand_vals.size(); ++i)
+        sum += integrand_vals[i] * weights[i];
+
+    return 4 * M_PI * sum;
 }
 
 
