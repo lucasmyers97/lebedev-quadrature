@@ -15,7 +15,7 @@ class QuadraturePoints
 {
 using vec = std::vector<double>;
 using scalar_function = std::function<double(double, double, double)>;
-using vector_function = std::function<vec(vec, vec, vec)>;
+using vector_function = std::function<vec(const vec&, const vec&, const vec&)>;
 
 public:
     LEBEDEV_EXTERNAL_LINKAGE
