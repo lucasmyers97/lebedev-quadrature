@@ -2,15 +2,17 @@
 
 ## Basic info
 
+
 Lebedev quadrature is a scheme for numerically computing integrals around the unit sphere:
-$$
+```math
 \int_{S^2} f(x, y, z) \, d^3 x
 =
 \int_0^{2\pi} d\phi \int_0^\pi \sin\theta \, d\theta f(\theta, \phi)
 \approx
 4 \pi
 \sum_k f(x_k, y_k, z_k) \, w_k
-$$
+```
+
 where $S^2$ is the regular $2D$ sphere, $(x_k, y_k, z_k)$ are the Lebedev quadrature points, and $w_k$ are the quadrature weights.
 
 ## Library features
