@@ -35,9 +35,6 @@ private:
     vec weights;
 };
 
-inline std::tuple<vec, vec, vec, vec> 
-generate_quadrature_points(QuadratureOrder quad_order);
-
 } // namespace lebedev
 
 #endif
