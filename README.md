@@ -152,6 +152,9 @@ Finally, I included a function which will calculate the integral, given a `std::
 
 ## Available quadrature orders
 
+Below is a table which gives the rule number (this is just a way to enumerate the rules), whether it is available in this library, the precision (i.e. the degree of polynomial it can exactly integrate), and the order (i.e. the number of points in the quadrature scheme).
+If you're interested in doing this programmatically, the `get_rule_order(unsigned int rule_number)`, `get_rule_availability(unsigned int rule_number)`, and `get_rule_precision(unsigned int rule_number)` functions all do what their names suggest.
+
 | Rule number | Available | Precision | Order |
 |-------------|-----------|-----------|-------|
 | 0           | yes       | 3         | 6     | 
