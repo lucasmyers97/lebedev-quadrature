@@ -22,25 +22,25 @@ In general, the solution for the integral of a monomial over the sphere is given
 \end{cases}
 ```
 where
-```
+```math
 B(l, m, n)
 =
 \frac{\Gamma(l) \Gamma(m) \Gamma(n)}{\Gamma(l + m + n)}
 ```
 We may write this in a more easily calculable way [by noting that](https://www.wikiwand.com/en/Particular_values_of_the_gamma_function#Integers_and_half-integers):
-```
+```math
 \Gamma\left(\frac{n}{2}\right)
 =
 \sqrt{\pi} \frac{(n - 2)!!}{2^{\frac{n - 1}{2}}}
 ```
 with
-```
+```math
 n!!
 =
 \prod_{k = 0}^{\lceil \frac{n}{2} \rceil - 1} (n - 2k)
 ```
 To write out $B(l, m, n)$ in a simpler way, we write:
-```
+```math
 \begin{split}
     \Gamma\left( \frac{a + 1}{2} \right)
     &=
@@ -53,7 +53,7 @@ To write out $B(l, m, n)$ in a simpler way, we write:
 where the last line follows because $a$ is even for nonzero integral, so $a - 1$ is odd.
 This applies for $b$ and $c$ as well. 
 Finally:
-```
+```math
 \begin{split}
     \Gamma\left( \frac{a + b + c + 3}{2} \right)
     &=
