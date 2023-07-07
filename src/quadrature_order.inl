@@ -100,6 +100,7 @@ constexpr std::array<QuadratureOrder, n_orders> order_enum_table
 
 
 
+LEBEDEV_EXTERNAL_LINKAGE
 QuadratureOrder get_rule_order(unsigned int rule_number)
 {
     if (rule_number >= number_of_rules)
@@ -110,6 +111,7 @@ QuadratureOrder get_rule_order(unsigned int rule_number)
 
 
 
+LEBEDEV_EXTERNAL_LINKAGE
 bool get_rule_availability(unsigned int rule_number)
 {
     if (rule_number >= number_of_rules)
@@ -120,6 +122,7 @@ bool get_rule_availability(unsigned int rule_number)
 
 
 
+LEBEDEV_EXTERNAL_LINKAGE
 unsigned int get_rule_precision(unsigned int rule_number)
 {
     if (rule_number >= number_of_rules)

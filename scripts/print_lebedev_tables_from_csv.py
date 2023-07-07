@@ -2,7 +2,7 @@ import argparse
 import pandas as pd
 
 function_declaration_template = '''template <>
-inline std::vector<GeneratorPoint>
+std::vector<GeneratorPoint>
 make_generator_points<QuadratureOrder::order_{order}>()
 {{
     return {{'''

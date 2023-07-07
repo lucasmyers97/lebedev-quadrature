@@ -1,16 +1,21 @@
 #ifndef QUADRATURE_ORDER_HPP
 #define QUADRATURE_ORDER_HPP
 
+#include "preprocessor.hpp"
+
 #include <array>
 
 namespace lebedev {
 
 enum class QuadratureOrder : unsigned int;
 
+LEBEDEV_EXTERNAL_LINKAGE
 QuadratureOrder get_rule_order(unsigned int rule_number);
 
+LEBEDEV_EXTERNAL_LINKAGE
 bool get_rule_availability(unsigned int rule_number);
 
+LEBEDEV_EXTERNAL_LINKAGE
 unsigned int get_rule_precision(unsigned int rule_number);
 
 enum class QuadratureOrder :unsigned int
