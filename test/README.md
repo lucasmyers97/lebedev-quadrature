@@ -87,16 +87,16 @@ This is what we calculate in the tests.
 
 In `test_header_only.cpp` and `test_no_header_only.cpp`, we define a function `calc_2k_1_product` to aid in the analytic calculation of these integrals, and `calc_coord_multiples` to aid in the numerical calculation of these integrals.
 `calc_2k_1_product` calculated a vector whose `i`th entry is given by:
-$$
+```math
 P(i) 
 = 
 \prod_0^i (2k - 1)
-$$
+```
 for $i \leq n$.
 Given a length-$m$ set of Lebedev quadrature points, `calc_coord_multiples` creates a tuple of three `std::vector<std::vector<double>>` objects of size $n \times m$ for which `x[i][j]` is given by:
-$$
+```math
 x(j)^{2i}
-$$
+```
 with $x(j)$ being the $x$-coordinate of the $j$th Lebedev point.
 This is similar for the $y$- and $z$-coordinates as well.
 In the main function, we just use these to calculate the difference between the left and the right sides of eq. (4).
