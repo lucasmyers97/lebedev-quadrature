@@ -131,7 +131,7 @@ target_include_directories(lebedev_implementation
 ### Git Submodule
 
 ```
-git submodule add --depth 1 https://github.com/lucasmyers97/lebedev_quadrature.git lebedev_quadrature
+git submodule add --depth 1 https://github.com/lucasmyers97/lebedev-quadrature.git lebedev-quadrature
 ```
 
 ## Implementation details
