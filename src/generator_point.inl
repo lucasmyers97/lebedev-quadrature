@@ -1,18 +1,19 @@
+#include "preprocessor.hpp"
 #include "generator_point.hpp"
 
 namespace lebedev {
 
 using OhPointGen = OctahedralPointGeneration;
 
-template <OctahedralPointGeneration>
+template <OhPointGen>
+LEBEDEV_INTERNAL_LINKAGE
 void generate_oh_symmetric_points
 (double a, double b, double c,vec &x, vec &y, vec &z);
 
 
 
 template <>
-inline void 
-generate_oh_symmetric_points<OhPointGen::points_6>
+void generate_oh_symmetric_points<OhPointGen::points_6>
 (double a, double b, double c, vec &x, vec &y, vec &z) 
 {
 
@@ -27,8 +28,7 @@ generate_oh_symmetric_points<OhPointGen::points_6>
 
 
 template <>
-inline void 
-generate_oh_symmetric_points<OhPointGen::points_12>
+void generate_oh_symmetric_points<OhPointGen::points_12>
 (double a, double b, double c, vec &x, vec &y, vec &z)
 {
 
@@ -43,8 +43,7 @@ generate_oh_symmetric_points<OhPointGen::points_12>
 
 
 template <>
-inline void 
-generate_oh_symmetric_points<OhPointGen::points_8>
+void generate_oh_symmetric_points<OhPointGen::points_8>
 (double a, double b, double c, vec &x, vec &y, vec &z)
 {
     assert((b == 0) && (c == 0)
@@ -58,8 +57,7 @@ generate_oh_symmetric_points<OhPointGen::points_8>
 
 
 template <>
-inline void 
-generate_oh_symmetric_points<OhPointGen::points_24>
+void generate_oh_symmetric_points<OhPointGen::points_24>
 (double a, double b, double c, vec &x, vec &y, vec &z)
 {
     assert((c == 0)
@@ -77,8 +75,7 @@ generate_oh_symmetric_points<OhPointGen::points_24>
 
 
 template <>
-inline void 
-generate_oh_symmetric_points<OhPointGen::points_24_axis>
+void generate_oh_symmetric_points<OhPointGen::points_24_axis>
 (double a, double b, double c, vec &x, vec &y, vec &z)
 {
     assert((c == 0)
@@ -96,8 +93,7 @@ generate_oh_symmetric_points<OhPointGen::points_24_axis>
 
 
 template <>
-inline void
-generate_oh_symmetric_points<OhPointGen::points_48>
+void generate_oh_symmetric_points<OhPointGen::points_48>
 (double a, double b, double c, vec &x, vec &y, vec &z)
 {
     x.insert(x.end(), { a, -a,  a, -a,  a, -a,  a, -a,  a, -a,  a, -a});
@@ -119,8 +115,8 @@ generate_oh_symmetric_points<OhPointGen::points_48>
 
 
 
-inline void GeneratorPoint::
-generate_quadrature_points(vec &x, vec &y, vec &z, vec &w) const
+LEBEDEV_EXTERNAL_LINKAGE
+void GeneratorPoint::generate_quadrature_points(vec &x, vec &y, vec &z, vec &w) const
 {
     unsigned int n_points = 0;
     if (generating_rule == OhPointGen::points_6)

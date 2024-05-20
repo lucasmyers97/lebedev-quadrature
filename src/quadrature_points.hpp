@@ -18,21 +18,18 @@ using scalar_function = std::function<double(double, double, double)>;
 using vector_function = std::function<vec(const vec&, const vec&, const vec&)>;
 
 public:
-    LEBEDEV_EXTERNAL_LINKAGE
     QuadraturePoints(QuadratureOrder quad_order);
 
-    LEBEDEV_EXTERNAL_LINKAGE
     double 
     evaluate_spherical_integral(const scalar_function& integrand_at_point) const;
 
-    LEBEDEV_EXTERNAL_LINKAGE
     double 
     evaluate_spherical_integral(const vector_function& integrand_at_points) const;
 
-    LEBEDEV_EXTERNAL_LINKAGE const vec& get_x() const;
-    LEBEDEV_EXTERNAL_LINKAGE const vec& get_y() const;
-    LEBEDEV_EXTERNAL_LINKAGE const vec& get_z() const;
-    LEBEDEV_EXTERNAL_LINKAGE const vec& get_weights() const;
+    const vec& get_x() const;
+    const vec& get_y() const;
+    const vec& get_z() const;
+    const vec& get_weights() const;
 
 private:
 

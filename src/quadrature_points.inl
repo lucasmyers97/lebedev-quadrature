@@ -31,40 +31,40 @@ QuadraturePoints::QuadraturePoints(QuadratureOrder quad_order)
 
 
 
-LEBEDEV_EXTERNAL_LINKAGE const vec& 
-QuadraturePoints::get_x() const
+LEBEDEV_EXTERNAL_LINKAGE 
+const vec& QuadraturePoints::get_x() const
 {
     return x;
 }
 
 
 
-LEBEDEV_EXTERNAL_LINKAGE const vec&
-QuadraturePoints::get_y() const
+LEBEDEV_EXTERNAL_LINKAGE 
+const vec& QuadraturePoints::get_y() const
 {
     return y;
 }
 
 
 
-LEBEDEV_EXTERNAL_LINKAGE const vec&
-QuadraturePoints::get_z() const
+LEBEDEV_EXTERNAL_LINKAGE 
+const vec& QuadraturePoints::get_z() const
 {
     return z;
 }
 
 
 
-LEBEDEV_EXTERNAL_LINKAGE const vec&
-QuadraturePoints::get_weights() const
+LEBEDEV_EXTERNAL_LINKAGE 
+const vec& QuadraturePoints::get_weights() const
 {
     return weights;
 }
 
 
 
-LEBEDEV_EXTERNAL_LINKAGE double 
-QuadraturePoints::evaluate_spherical_integral(const scalar_function& integrand_at_point) const
+LEBEDEV_EXTERNAL_LINKAGE 
+double QuadraturePoints::evaluate_spherical_integral(const scalar_function& integrand_at_point) const
 {
     double sum = 0;
     for (std::size_t i = 0; i < x.size(); ++i)
@@ -75,8 +75,8 @@ QuadraturePoints::evaluate_spherical_integral(const scalar_function& integrand_a
 
 
 
-LEBEDEV_EXTERNAL_LINKAGE double 
-QuadraturePoints::evaluate_spherical_integral(const vector_function& integrand_at_points) const
+LEBEDEV_EXTERNAL_LINKAGE 
+double QuadraturePoints::evaluate_spherical_integral(const vector_function& integrand_at_points) const
 {
     auto integrand_vals = integrand_at_points(x, y, z);
 
