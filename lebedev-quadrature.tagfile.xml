@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<tagfile doxygen_version="1.9.1">
+  <compound kind="class">
+    <name>lebedev::GeneratorPoint</name>
+    <filename>classlebedev_1_1_generator_point.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>GeneratorPoint</name>
+      <anchorfile>classlebedev_1_1_generator_point.html</anchorfile>
+      <anchor>af311e5bbdf40434d43625f5b8811ed7e</anchor>
+      <arglist>(double a, double b, double c, double weight, OhPointGen generating_rule)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>generate_quadrature_points</name>
+      <anchorfile>classlebedev_1_1_generator_point.html</anchorfile>
+      <anchor>a61b6752c76b49a51b08690ba627ab81d</anchor>
+      <arglist>(vec &amp;x, vec &amp;y, vec &amp;z, vec &amp;w) const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>lebedev::QuadraturePoints</name>
+    <filename>classlebedev_1_1_quadrature_points.html</filename>
+    <member kind="typedef">
+      <type>std::vector&lt; double &gt;</type>
+      <name>vec</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>a1b9b12cbf3b5d503657f2b6b569a6104</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::function&lt; double(double, double, double)&gt;</type>
+      <name>scalar_function</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>adb331cbd7ffb896590bef0c9cc1cbfe0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::function&lt; vec(const vec &amp;, const vec &amp;, const vec &amp;)&gt;</type>
+      <name>vector_function</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>aa5c032b24c87eccec0c90756658bdb44</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>QuadraturePoints</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>ac513a745867d0b91a896e0e346fc8f6b</anchor>
+      <arglist>(QuadratureOrder quad_order)</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>evaluate_spherical_integral</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>a392b4f56e49f9bb87e31918b10a93d85</anchor>
+      <arglist>(const scalar_function &amp;integrand_at_point) const</arglist>
+    </member>
+    <member kind="function">
+      <type>double</type>
+      <name>evaluate_spherical_integral</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>af9eca6bcc800cd14c53fe3fe38c76d64</anchor>
+      <arglist>(const vector_function &amp;integrand_at_points) const</arglist>
+    </member>
+    <member kind="function">
+      <type>const vec &amp;</type>
+      <name>get_x</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>a7be6d636743808ab13ea6cd782581529</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const vec &amp;</type>
+      <name>get_y</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>a77be147744c6da5569abd1a93313ff23</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const vec &amp;</type>
+      <name>get_z</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>affb06c1abae33be3e4195cd1d44479ea</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const vec &amp;</type>
+      <name>get_weights</name>
+      <anchorfile>classlebedev_1_1_quadrature_points.html</anchorfile>
+      <anchor>a87941879d7ca58bd59fb67f076a160f4</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>lebedev</name>
+    <filename>namespacelebedev.html</filename>
+    <class kind="class">lebedev::GeneratorPoint</class>
+    <class kind="class">lebedev::QuadraturePoints</class>
+    <member kind="typedef">
+      <type>std::vector&lt; double &gt;</type>
+      <name>vec</name>
+      <anchorfile>namespacelebedev.html</anchorfile>
+      <anchor>a9f1edddb6a823d3e860ebf220ff9a381</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>OctahedralPointGeneration</name>
+      <anchorfile>namespacelebedev.html</anchorfile>
+      <anchor>a2bdd39774b20e26dfaf86e045dbce437</anchor>
+      <arglist></arglist>
+      <enumvalue file="namespacelebedev.html" anchor="a2bdd39774b20e26dfaf86e045dbce437a8a54f9c514e143d95ae8e1693eca9511">points_6</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a2bdd39774b20e26dfaf86e045dbce437a28f01b9621daaac255d6316c07e63d71">points_12</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a2bdd39774b20e26dfaf86e045dbce437aa7013269b6da7c742e75d75d7f699215">points_8</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a2bdd39774b20e26dfaf86e045dbce437a1e5d6c8c8d24db868d5116b7a18d9b76">points_24</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a2bdd39774b20e26dfaf86e045dbce437add37beb8a559589caf1a08cf4a0c3a3e">points_24_axis</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a2bdd39774b20e26dfaf86e045dbce437a50b8193f98364faddc13f4d8f2379870">points_48</enumvalue>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>QuadratureOrder</name>
+      <anchorfile>namespacelebedev.html</anchorfile>
+      <anchor>a1cbf2898bc9abb89e07ed6e0d7a7cdce</anchor>
+      <arglist></arglist>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcead729c193a93d4d33122ff0f0f1b64163">order_6</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea7c2a54b373a266694fa66cf3d9278a70">order_14</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea4880107de188af2e40b5953324b9ea70">order_26</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea98dcc36a88188510799924ed046d71c3">order_38</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea57b58a08d37ae0f03ba64374ee0630af">order_50</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea8f0339595ff91f9171211f518a5e1c81">order_74</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceac71afbedb31e8e73d58ffe26ffecb768">order_86</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaf422b037da4a0691967c45ab224c7add">order_110</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaa88d7ba2956b6e360f6b6e8d9c9e4d17">order_146</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaf3b6cbc550ca9f056f843d8105d72dd3">order_170</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea7ad0be1ce2d8e1644e77ff16180e9b1b">order_194</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea57cc0af3c0e7d070d7c003d84903bb5a">order_230</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea05842fdbb86a5361c0780dee2cc49256">order_266</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceab17ea0d07b8bd779c4b019c9f9b107e6">order_302</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceae137cd38704baf25af5195a74cec9c9d">order_350</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea98792f612476532b31b1812f59ad849d">order_386</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea1c722a6e52a0aaa26dc64f78912e79d7">order_434</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea72f91bb2986b6bff406498bea8e466a5">order_482</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea35f94110a5ec425dcb404838928f384e">order_530</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaea9804666f569d2071e1d8240ac0861c">order_590</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea2d24a4f9d10d72ac5d3357b1f9692583">order_650</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea0adb8895514eadea2c49da34a62f57fa">order_698</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea91494130791cddd144c9d5e9ca1dfb5d">order_770</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea0699425a3d780a109efe1bcc27e13fea">order_830</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea3adc327f894b1ddcbf27739a8e4ea79b">order_890</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaa9f92846c68886676e0a475406e8fdf5">order_974</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea8a8a7494c9b70b4477aaf5598f9454d6">order_1046</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaa3d0471695acbc064071984b77849c10">order_1118</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea1703edc9b31c5e819e22a9f4f04e806c">order_1202</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcead14e8c82e243c69de1e3788d4d786857">order_1274</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaf674d26b502d1a1d75ae3f07d598310d">order_1358</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceab2ff8daeb9799efc011c2028ea3d7a1f">order_1454</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea682d0a26814651589f64124dca76e461">order_1538</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea5d4519f4a05ad097ca8ef5a42b2575b2">order_1622</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea5677b24e2873282a8a78e66fd77ed55d">order_1730</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea210e27d429879a65d0708bdfefd9c095">order_1814</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea134585fece79d1b858893fd59266809b">order_1910</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcead85959b5f57cadfb33d9efc2d775541b">order_2030</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea282b311ab3dd1b595ef3b06ad210d553">order_2126</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea2feed41b89f20429ef7a43c8faf226a7">order_2222</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea421323e05243adbe7acb61a9e5aba927">order_2354</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaacc9051e6ff2578548bd1d12813d3eb9">order_2450</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcead675d154a3a36cb7d37a7ede722a6d36">order_2558</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea125a8e513cfd2d62a63399b61c4879b5">order_2702</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea1392de775901e79ebca2fd5ceb4f9636">order_2810</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea0c5367c007afd9911afff923528db0ee">order_2930</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcead4659be73d00fc08a657d1f1260415bf">order_3074</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceac4985d101fb091326865b0d9882a8631">order_3182</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea5aad7c9a181270cb67fe9e11aa67b0f7">order_3314</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaa3475e0de172964c0512da1805f242af">order_3470</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea1d1feafa4bf5fe7c573d1ce546ca2710">order_3590</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea3036a84b0603c9fa1c7648f96d9df3ed">order_3722</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceaf1c8b280de659515db254394f7ae333c">order_3890</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea5bf98defd11b98f1d518558dea88b683">order_4010</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceab832263d8d4990550dd7d4e00e7d72b4">order_4154</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea5d8eb02395f8dc973b43a08dec7766d4">order_4334</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceac8994e50dc6763163d9d3661f8756700">order_4466</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceadbb42d83157b1037aae4a94f4cc67de0">order_4610</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea97960b4ec701141be0ec2a6a5f2c222f">order_4802</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea70a22376ab90e2ef15b70084b92362b4">order_4934</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea4a4e7a6ef80ad41f3e440164ab785f54">order_5090</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdceabd8e56edcc0178d2a14be38758e3c4a7">order_5294</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea28d43a50fed76cb46c2c902064a3ca27">order_5438</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea8c72757afa5a1a94ce676ecdc2ab3dab">order_5606</enumvalue>
+      <enumvalue file="namespacelebedev.html" anchor="a1cbf2898bc9abb89e07ed6e0d7a7cdcea1b276701dcfe44764e12a1af6967f9e4">order_5810</enumvalue>
+    </member>
+    <member kind="function">
+      <type>enum QuadratureOrder unsigned int QuadratureOrder</type>
+      <name>get_rule_order</name>
+      <anchorfile>namespacelebedev.html</anchorfile>
+      <anchor>a5f76996e5ec7bc283c6b4082531bce6a</anchor>
+      <arglist>(unsigned int rule_number)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>get_rule_availability</name>
+      <anchorfile>namespacelebedev.html</anchorfile>
+      <anchor>a179c2dafe0d5b51f25b5d3d291b439a6</anchor>
+      <arglist>(unsigned int rule_number)</arglist>
+    </member>
+    <member kind="function">
+      <type>unsigned int</type>
+      <name>get_rule_precision</name>
+      <anchorfile>namespacelebedev.html</anchorfile>
+      <anchor>a11aef9778445e24b5a2d87efb35dbb74</anchor>
+      <arglist>(unsigned int rule_number)</arglist>
+    </member>
+    <member kind="function">
+      <type>QuadratureOrder</type>
+      <name>get_order_enum</name>
+      <anchorfile>namespacelebedev.html</anchorfile>
+      <anchor>a9b184e05918864062e607053e6ecd2e0</anchor>
+      <arglist>(unsigned int quadrature_order)</arglist>
+    </member>
+  </compound>
+  <compound kind="page">
+    <name>md__home_lucas_Documents_research_lebedev_quadrature_docs_SRC_README</name>
+    <title>SRC_README</title>
+    <filename>md__home_lucas__documents_research_lebedev_quadrature_docs__s_r_c__r_e_a_d_m_e.html</filename>
+  </compound>
+  <compound kind="page">
+    <name>md__home_lucas_Documents_research_lebedev_quadrature_docs_TEST_README</name>
+    <title>TEST_README</title>
+    <filename>md__home_lucas__documents_research_lebedev_quadrature_docs__t_e_s_t__r_e_a_d_m_e.html</filename>
+  </compound>
+  <compound kind="page">
+    <name>md_README</name>
+    <title>Source</title>
+    <filename>md__r_e_a_d_m_e.html</filename>
+  </compound>
+  <compound kind="page">
+    <name>index</name>
+    <title></title>
+    <filename>index.html</filename>
+    <docanchor file="index.html">md__home_lucas_Documents_research_lebedev_quadrature_docs_README</docanchor>
+    <docanchor file="index.html" title="Available quadrature orders">available-quadrature-orders</docanchor>
+  </compound>
+</tagfile>
