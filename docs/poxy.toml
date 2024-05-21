@@ -1,0 +1,39 @@
+# this is a config file for Poxy - a Doxygen + m.css front-end written in Python.
+# https://github.com/marzer/poxy
+#
+# config reference: https://github.com/marzer/poxy/wiki/Configuration-options
+
+name            = 'lebedev-quadrature'
+author          = 'Lucas Myers'
+description     = 'Pure C++ Lebedev Quadrature'
+cpp             = 17
+github          = 'lucasmyers97/lebedev-quadrature'
+license         = [ 'MIT', 'https://github.com/marzer/tomlplusplus/blob/master/LICENSE' ]
+show_includes   = false
+changelog       = false
+# logo            = 'images/logo.svg'
+# favicon         = 'images/favicon.ico'
+navbar          = [ 'namespaces', 'annotated', 'classes' ]
+theme           = 'dark'
+main_page       = './README.md'
+# extra_files     = [
+#     'images/badge-awesome.svg',
+#     'images/badge-TOML.svg',
+#     'images/badge-gitter.svg',
+# ]
+
+
+
+[warnings]
+enabled         = true
+treat_as_errors = false
+undocumented    = false
+
+
+
+[sources]
+paths           = [ './' ]
+recursive_paths = [ '../src' ]
+patterns        = [ '*.h', '*.hpp', '*.dox', '*.md' ]
+strip_paths     = [ '../src' ]
+# extract_all = true

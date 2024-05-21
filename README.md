@@ -136,13 +136,13 @@ git submodule add --depth 1 https://github.com/lucasmyers97/lebedev-quadrature.g
 
 ## Implementation details
 
-For implementation details, see the `README.md` file in the `src` directory.
+For implementation details, see [here](src/README.md).
 
 ## Tests
 
 Lebedev quadrature is designed to exactly integrate polynomials up to some degree which is dependent on the order of quadrature ([see below](#available-quadrature-orders) for details).
 Hence, to test for bugs in this implementation we numerically integrate all monomials of the proper degree and compare that with analytic answers (indeed, there is a way to exactly integrate polynomials on the sphere).
-See the `README.md` in the `test` folder for details.
+See the [here](test/README.md).
 
 ## Sources
 
@@ -152,7 +152,7 @@ I thought it might be nice to rewrite in (somewhat modern) C++ to use things lik
 I also took the opportunity to try to make the intent of the code a little more explicit in the README files.
 Finally, I included a function which will calculate the integral, given a `std::function` object and a `lebedev::QuadraturePoints` (for ease of operation). 
 
-## Available quadrature orders
+## Available quadrature orders {#available-quadrature-orders}
 
 Below is a table which gives the rule number (this is just a way to enumerate the rules), whether it is available in this library, the precision (i.e. the degree of polynomial it can exactly integrate), and the order (i.e. the number of points in the quadrature scheme).
 If you're interested in doing this programmatically, the `get_rule_order(unsigned int rule_number)`, `get_rule_availability(unsigned int rule_number)`, and `get_rule_precision(unsigned int rule_number)` functions all do what their names suggest.

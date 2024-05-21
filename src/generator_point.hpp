@@ -7,8 +7,13 @@
 
 namespace lebedev {
 
+/** \brief vector of doubles */
 using vec = std::vector<double>;
 
+/**
+ * \brief Enumerates rules used to get the image of a point under the action
+ * of all members of Octahedral symmetry group.
+ */
 enum class OctahedralPointGeneration 
 {
     points_6,
@@ -25,8 +30,11 @@ using OhPointGen = OctahedralPointGeneration;
  * \brief Point and weight which is acted on by Octahedral symmetry group to 
  * generate sets of points in a particular Lebedev quadrature rule.
  *
- * Here is some more stuff, blah blah blah.
- */
+ * Contains a point (`a`, `b`, `c`), a weight `weight`, and a rule 
+ * `generating_rule`.
+ * The rule specifies how to transform the point to get its image under the
+ * action of all members of the Octahedral group.
+ **/
 class GeneratorPoint
 {
 public:

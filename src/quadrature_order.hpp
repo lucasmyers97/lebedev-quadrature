@@ -9,15 +9,20 @@ namespace lebedev {
 
 enum class QuadratureOrder : unsigned int;
 
+/** \brief Gets order enum from rule number. See README for rule number to order translation */
 QuadratureOrder get_rule_order(unsigned int rule_number);
 
+/** \brief Returns whether a quadrature rule is available. README also contains this info */
 bool get_rule_availability(unsigned int rule_number);
 
+/** \brief Returns the highest degree of polynomial that can be integrated exactly */
 unsigned int get_rule_precision(unsigned int rule_number);
 
+/** \brief Gets `QuadratureOrder` enum value from a corresponding unsigned int */
 QuadratureOrder get_order_enum(unsigned int quadrature_order);
 
-enum class QuadratureOrder :unsigned int
+/** \brief Enumerates all possible quadrature orders in this library */
+enum class QuadratureOrder : unsigned int
 {
     order_6 = 6,
     order_14 = 14,

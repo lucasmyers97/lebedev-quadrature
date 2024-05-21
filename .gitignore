@@ -6,3 +6,7 @@ docs/html
 
 README.pdf
 compile_commands.json
+
+docs/*
+!docs/poxy.toml
+!docs/preprocess_readme.py
