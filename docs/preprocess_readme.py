@@ -1,5 +1,8 @@
 import re
 
+other_replacements = [(r'## Available quadrature orders',
+                       r'## Available quadrature orders {#available-quadrature-orders}')]
+
 def markdown_to_doxygen(text):
 
     inline_pattern = r'\$(.*?)\$'
@@ -15,6 +18,9 @@ def markdown_to_doxygen(text):
     link_pattern = r'\((.*)\/README\.md\)'
     link_replace = lambda m: r'(' + m.group(1).upper() + r'_README.md' + r')'
     text = re.sub(link_pattern, link_replace, text)
+
+    for pattern, replace in other_replacements:
+        text = re.sub(pattern, replace, text)
 
     return text
 

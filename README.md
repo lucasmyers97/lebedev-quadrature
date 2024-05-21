@@ -152,7 +152,7 @@ I thought it might be nice to rewrite in (somewhat modern) C++ to use things lik
 I also took the opportunity to try to make the intent of the code a little more explicit in the README files.
 Finally, I included a function which will calculate the integral, given a `std::function` object and a `lebedev::QuadraturePoints` (for ease of operation). 
 
-## Available quadrature orders {#available-quadrature-orders}
+## Available quadrature orders
 
 Below is a table which gives the rule number (this is just a way to enumerate the rules), whether it is available in this library, the precision (i.e. the degree of polynomial it can exactly integrate), and the order (i.e. the number of points in the quadrature scheme).
 If you're interested in doing this programmatically, the `get_rule_order(unsigned int rule_number)`, `get_rule_availability(unsigned int rule_number)`, and `get_rule_precision(unsigned int rule_number)` functions all do what their names suggest.
