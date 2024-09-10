@@ -108,7 +108,7 @@ To bypass this, you must compile the library to a shared or static library withi
 #include <lebedev_quadrature.hpp>
 ```
 
-2. Define `#LEBEDEV_IMPLEMENTATION` before including  `global_header.hpp`
+2. Define `#LEBEDEV_IMPLEMENTATION` before including  `lebedev_implementation.hpp`
 ```cpp
 // lebedev_implementation.cpp
 
